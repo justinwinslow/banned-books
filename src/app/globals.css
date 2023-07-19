@@ -1,6 +1,7 @@
 :root {
-  --some-variable: 255, 255, 255;
   --default-padding: 24px;
+  --primary-color: #2a3544;
+  --secondary-color: orange;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -9,8 +10,14 @@
   }
 }
 
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
 html, body {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
   height: 100%;
 }
 
@@ -34,12 +41,18 @@ header {
   width: 100%;
   padding: var(--default-padding);
   background-color: #2a3544;
+  overflow: hidden;
 }
 
 header h1 {
   line-height: 1em;
   margin: 0;
   padding: 0;
+  float: left;
+}
+
+header .global-search {
+  float: right;
 }
 
 nav a {
@@ -56,6 +69,7 @@ nav a:hover {
 
 body > main {
   height: calc(100% - 136px);
+  max-width: 100%;
   overflow: auto;
 }
 

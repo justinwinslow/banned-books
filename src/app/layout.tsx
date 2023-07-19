@@ -2,6 +2,7 @@ import '/node_modules/normalize.css/normalize.css';
 import './globals.css';
 
 import Link from 'next/link';
+import Search from '../components/search';
 import Navigation from '../components/navigation';
 
 export default function RootLayout({
@@ -27,6 +28,7 @@ export default function RootLayout({
           <Link href="/">
             <h1>Banned Books</h1>
           </Link>
+          <Search route="books" />
         </header>
         <Navigation navLinks={views} />
         <main>
