@@ -10,6 +10,10 @@
 }
 
 
+html, body {
+  height: 100%;
+}
+
 body {
   background-color: #1c2128;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -50,8 +54,9 @@ nav a:hover {
   transition: background-color 0.2s ease-in-out;
 }
 
-main {
-  padding: var(--default-padding);
+body > main {
+  height: calc(100% - 136px);
+  overflow: auto;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -15,8 +15,8 @@ export default function RootLayout({
       name: 'Home'
     },
     { 
-      href: '/search',
-      name: 'Search'
+      href: '/books',
+      name: 'Books'
     }
   ];
 
@@ -24,7 +24,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <header>
-          <h1>Banned Books</h1>
+          <Link href="/">
+            <h1>Banned Books</h1>
+          </Link>
         </header>
         <Navigation navLinks={views} />
         <main>
