@@ -1,5 +1,3 @@
-
-
 ul.books {
   list-style-type: none;
   padding: 0;
@@ -7,5 +5,5 @@ ul.books {
 }
 
 ul.books > li {
-  padding: var(--default-padding);
+  padding: calc(var(--default-padding)/2) var(--default-padding) calc(var(--default-padding)/2) var(--default-padding);
 }

@@ -5,16 +5,14 @@ import './style.css';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import levenshtein from 'js-levenshtein';
-import { kebabCase } from 'lodash'
-;
+import { kebabCase } from 'lodash';
 import parseBooks from '../../util/parse-books';
-import data from '../data/list';
+import books from '../../store/books';
 
 
 export default function Books() {
   const searchParams = useSearchParams();
   const search = searchParams.get('search');
-  const books = parseBooks(data);
 
   function filteredBooks (books) {
     return books.filter(b => {
