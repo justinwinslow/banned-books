@@ -1,3 +1,7 @@
+section.view.books {
+  padding: var(--default-padding);
+}
+
 ul.books {
   list-style-type: none;
   padding: 0;
@@ -5,5 +9,27 @@ ul.books {
 }
 
 ul.books > li {
-  padding: calc(var(--default-padding)/2) var(--default-padding) calc(var(--default-padding)/2) var(--default-padding);
+  margin-bottom: calc(var(--default-padding)/2);
+}
+
+ul.books > li > a {
+  display: block;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  
+}
+
+ul.books > li > a > header {
+  display: block;
+  padding: 12px;
+  border-bottom: 1px solid var(--primary-color);
+  background-color: var(--primary-color-dark);
+}
+
+ul.books > li > a > section {
+  display: block;
+  padding: 12px;
+  font-style: italic;
+  font-size: 12px;
+  color: var(--primary-color-light);
 }

@@ -1,6 +1,8 @@
 :root {
   --default-padding: 24px;
   --primary-color: #2a3544;
+  --primary-color-light: #546378; /* #404d5f; */
+  --primary-color-dark: #202731;
   --secondary-color: #ffa200;
 }
 
@@ -43,7 +45,13 @@ button:focus {
   outline: none;
 }
 
-header {
+body > main {
+  height: calc(100% - 136px);
+  max-width: 100%;
+  overflow: auto;
+}
+
+body > header {
   display: block;
   width: 100%;
   padding: var(--default-padding);
@@ -51,44 +59,38 @@ header {
   overflow: hidden;
 }
 
-header h1 {
+body > header h1 {
   line-height: 1em;
   margin: 0;
   padding: 0;
   float: left;
 }
 
-header .global-search {
+body > header .global-search {
   float: right;
 }
 
 @media (max-width: 600px) {
-  header h1 {
+  body > header h1 {
     float: none;
     margin-bottom: 6px;
   }
-  header .global-search {
+  body > header .global-search {
     float: none;
     width: 100%;
   }
 }
 
-nav a {
+body > nav a {
   display: inline-block;
   padding: 18px;
   padding-left: var(--default-padding);
   padding-right: var(--default-padding);
 }
 
-nav a:hover {
+body > nav a:hover {
   background-color: #2a3544;
   transition: background-color 0.2s ease-in-out;
-}
-
-body > main {
-  height: calc(100% - 136px);
-  max-width: 100%;
-  overflow: auto;
 }
 
 @media (prefers-color-scheme: dark) {

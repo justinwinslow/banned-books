@@ -30,7 +30,7 @@ export default function RootLayout({
           </Link>
           <Search route="books" />
         </header>
-        <Navigation navLinks={views} />
+        {/*<Navigation navLinks={views} />*/}
         <main>
           {children}
         </main>

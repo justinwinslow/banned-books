@@ -37,7 +37,12 @@ export default function Books() {
         {filteredBooks(books).map(b => (
           <li key={b.Title}>
             <Link href={`/books/${encodeURIComponent(kebabCase(b.Title))}`}>
-              {b.Title}
+              <header>
+                {b.Title}
+              </header>
+              <section>
+                by <strong>{b.Author}</strong>
+              </section>
             </Link>
           </li>
         ))}
