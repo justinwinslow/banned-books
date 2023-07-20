@@ -2,7 +2,7 @@
 
 import './style.css';
  
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
  
 export default function Search({ route }) {
@@ -16,16 +16,26 @@ export default function Search({ route }) {
       return params.toString()
     },
     [searchParams]
-  )
+  );
+
+  console.log('search', searchParams.get('search'));
+
+  useEffect(() => {
+    console.log('useEffect', searchParams.get('search'));
+  }, [searchParams]);
 
   function search(event) {
     console.log(event.target.value);
     router.push(`/${route}?` + createQueryString('search', event.target.value));
   }
 
+  const input = (
+    <input type="text" name="search" placeholder="Search" onChange={search} />
+  )
+
   return (
     <div className="global-search">
-      <input type="text" name="search" placeholder="Search" onChange={search} />
+      <input value={searchParams.get('search') || ''} type="text" name="search" placeholder="Search" onChange={search} />
     </div>
   )
 }

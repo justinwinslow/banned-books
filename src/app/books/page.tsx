@@ -17,6 +17,9 @@ export default function Books() {
   function filteredBooks (books) {
     return books.filter(b => {
       return b.Title.toLowerCase().includes((search || '').toLowerCase()); // || levenshtein(b.Title, search) <= 2;
+    })
+    .sort((a, b) => {
+      return a.Title.localeCompare(b.Title);
     });
     // .sort((a, b) => {
     //   console.log(levenshtein(a.Title, search), levenshtein(b.Title, search));
