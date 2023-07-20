@@ -1,7 +1,7 @@
 :root {
   --default-padding: 24px;
   --primary-color: #2a3544;
-  --secondary-color: orange;
+  --secondary-color: #ffa200;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,14 +33,21 @@ a {
 }
 
 a.active {
-  color: orange;
+  color: var(--secondary-color);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
 }
 
 header {
   display: block;
   width: 100%;
   padding: var(--default-padding);
-  background-color: #2a3544;
+  background-color: var(--primary-color);
   overflow: hidden;
 }
 

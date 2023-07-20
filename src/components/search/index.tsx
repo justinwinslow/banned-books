@@ -24,7 +24,7 @@ export default function Search({ route }) {
   }
 
   return (
-    <div class="global-search">
+    <div className="global-search">
       <input type="text" name="search" placeholder="Search" onChange={search} />
     </div>
   )
