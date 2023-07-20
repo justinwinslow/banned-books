@@ -62,6 +62,17 @@ header .global-search {
   float: right;
 }
 
+@media (max-width: 600px) {
+  header h1 {
+    float: none;
+    margin-bottom: 6px;
+  }
+  header .global-search {
+    float: none;
+    width: 100%;
+  }
+}
+
 nav a {
   display: inline-block;
   padding: 18px;

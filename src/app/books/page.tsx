@@ -2,9 +2,11 @@
 
 import './style.css';
 
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import levenshtein from 'js-levenshtein';
-
+import { kebabCase } from 'lodash'
+;
 import parseBooks from '../../util/parse-books';
 import data from '../data/list';
 
@@ -24,12 +26,18 @@ export default function Books() {
     // });
   }
 
+  function getUrl(title) {
+    return `/books/${kebabCase(title)}`;
+  }
+
   return (
     <section className="view books">
       <ul className="books">
         {filteredBooks(books).map(b => (
           <li key={b.Title}>
-            {b.Title}
+            <Link href={`/books/${encodeURIComponent(kebabCase(b.Title))}`}>
+              {b.Title}
+            </Link>
           </li>
         ))}
       </ul>

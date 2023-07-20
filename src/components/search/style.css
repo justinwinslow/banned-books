@@ -17,6 +17,7 @@
 }
 
 .global-search > input {
+  width: calc(100% - 32px);
   background-color: #fff;
   border: none;
   height: 100%;
