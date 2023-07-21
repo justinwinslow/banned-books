@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import './style.css';
  
@@ -19,14 +19,11 @@ export default function Search({ route }) {
     [searchParams]
   );
 
-  console.log('search', searchParams.get('search'));
-
-  useEffect(() => {
-    console.log('useEffect', searchParams.get('search'));
-  }, [searchParams]);
+  // useEffect(() => {
+  //   console.log('useEffect', searchParams.get('search'));
+  // }, [searchParams]);
 
   function search(event) {
-    console.log(event.target.value);
     router.push(`/${route}?` + createQueryString('search', event.target.value));
   }
 

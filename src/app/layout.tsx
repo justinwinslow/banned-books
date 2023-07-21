@@ -1,9 +1,13 @@
+'use client';
+
 import '/node_modules/normalize.css/normalize.css';
 import './globals.css';
 
 import Link from 'next/link';
 import Search from '../components/search';
 import Navigation from '../components/navigation';
+
+import { usePathname } from 'next/navigation';
 
 export default function RootLayout({
   children,
@@ -21,6 +25,14 @@ export default function RootLayout({
     }
   ];
 
+  const pathname = usePathname();
+  // Don't show banner search if on the home page
+  function showGlobalSearch() {
+    if (pathname != '/') {
+      return (<Search route="books" />);
+    }
+  }
+
   return (
     <html lang="en">
       <body>
@@ -28,7 +40,7 @@ export default function RootLayout({
           <Link href="/">
             <h1>Banned Books</h1>
           </Link>
-          <Search route="books" />
+          {showGlobalSearch()}
         </header>
         {/*<Navigation navLinks={views} />*/}
         <main>

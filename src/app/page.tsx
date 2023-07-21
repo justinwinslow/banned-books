@@ -9,7 +9,6 @@ export default function Home() {
   const router = useRouter();
   const [search, setSearch] = useState('');
   function doSearch() {
-    console.log('doSearch', search);
     router.push(`/books?search=${search}`);
   }
 
