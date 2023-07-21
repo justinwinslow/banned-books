@@ -57,6 +57,8 @@ body > header {
   padding: var(--default-padding);
   background-color: var(--primary-color);
   overflow: hidden;
+  box-shadow: 0 5px 5px rgb(0,0,0,0.15);
+  position: relative;
 }
 
 body > header h1 {
