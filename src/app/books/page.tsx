@@ -16,27 +16,25 @@ export default function Books() {
 
   function filteredBooks (books) {
     return books.filter(b => {
+      /* TODO - Add loose matching */
       return b.Title.toLowerCase().includes((search || '').toLowerCase()); // || levenshtein(b.Title, search) <= 2;
     })
     .sort((a, b) => {
       return a.Title.localeCompare(b.Title);
     });
+    /* TODO - Sort based on proximity to search query */
     // .sort((a, b) => {
     //   console.log(levenshtein(a.Title, search), levenshtein(b.Title, search));
     //   return levenshtein(b.Title, search) - levenshtein(a.Title, search);
     // });
   }
 
-  function getUrl(title) {
-    return `/books/${kebabCase(title)}`;
-  }
-
   return (
     <section className="view books">
       <ul className="books">
         {filteredBooks(books).map(b => (
-          <li key={b.Title}>
-            <Link href={`/books/${encodeURIComponent(kebabCase(b.Title))}`}>
+          <li key={`${b.Title}-${b.Author}`}>
+            <Link href={`/books/${encodeURIComponent(kebabCase(`${b.Title}-${b.Author}`))}`}>
               <header>
                 {b.Title}
               </header>

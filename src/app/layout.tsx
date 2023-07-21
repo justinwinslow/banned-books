@@ -25,8 +25,8 @@ export default function RootLayout({
     }
   ];
 
-  const pathname = usePathname();
   // Don't show banner search if on the home page
+  const pathname = usePathname();
   function showGlobalSearch() {
     if (pathname != '/') {
       return (<Search route="books" />);

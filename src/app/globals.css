@@ -64,6 +64,7 @@ body > header h1 {
   margin: 0;
   padding: 0;
   float: left;
+  font-weight: normal;
 }
 
 body > header .global-search {
