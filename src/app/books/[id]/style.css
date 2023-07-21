@@ -1,3 +1,33 @@
 section.view.detail {
   padding: var(--default-padding);
 }
+
+section.view.detail h2 {
+  font-weight: normal;
+  margin: 0 0 6px;
+}
+
+section.view.detail h2 > .back {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 12px;
+  margin: 0 0 12px;
+  color: var(--primary-color-light);
+  transition: color 0.2s ease-in-out;
+}
+
+section.view.detail h2 > .back:before {
+  content: '↵';
+  margin-right: 6px;
+  font-weight: bold;
+}
+
+section.view.detail h2 > .back:hover {
+  color: #fff;
+}
+
+section.view.detail h2 > .author {
+  font-style: italic;
+  font-size: 15px;
+  line-height: 15px;
+}

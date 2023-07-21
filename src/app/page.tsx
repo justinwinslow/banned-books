@@ -12,8 +12,8 @@ export default function Home() {
     router.push(`/books?search=${search}`);
   }
 
-  function handleKeyUp(e) {
-    if (e.key == 'Enter') doSearch();
+  function handleKeyUp(event) {
+    if (event.key == 'Enter') doSearch();
   }
 
   const button = (

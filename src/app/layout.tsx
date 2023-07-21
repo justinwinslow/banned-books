@@ -38,7 +38,7 @@ export default function RootLayout({
       <body>
         <header>
           <Link href="/">
-            <h1>Banned Books</h1>
+            <h1>School Book Bans</h1>
           </Link>
           {showGlobalSearch()}
         </header>
