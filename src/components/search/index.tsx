@@ -2,6 +2,7 @@
 
 import './style.css';
  
+import { debounce } from 'lodash';
 import { useCallback, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
  
@@ -35,7 +36,7 @@ export default function Search({ route }) {
 
   return (
     <div className="global-search">
-      <input value={searchParams.get('search') || ''} type="text" name="search" placeholder="Search" onChange={search} />
+      <input value={searchParams.get('search') || ''} type="text" name="search" placeholder="Search by title" onChange={search} />
     </div>
   )
 }

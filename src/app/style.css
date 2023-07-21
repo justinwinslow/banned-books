@@ -1,1 +1,30 @@
+section.view.root {
+  padding: var(--default-padding);
+}
 
+.view.root .root-search {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 25%;
+}
+
+.view.root .root-search input {
+  width: calc(100% - 80px);
+  border: none;
+  height: 48px;
+  padding: 6px 12px;
+  border-radius: 4px 0 0 4px;
+  background-color: #fff;
+  color: #333;
+}
+
+.view.root .root-search button {
+  border: none;
+  border-radius: 0 4px 4px 0;
+  height: 48px;
+  padding: 6px 12px;
+  background-color: var(--secondary-color);
+}

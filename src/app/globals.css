@@ -46,7 +46,7 @@ button:focus {
 }
 
 body > main {
-  height: calc(100% - 136px);
+  height: calc(100% - 80px);
   max-width: 100%;
   overflow: auto;
 }
