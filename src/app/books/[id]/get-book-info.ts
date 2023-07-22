@@ -1,10 +1,6 @@
-function replaceSpaces(string) {
-  return string.replace(/ /g, '+');
-}
-
 export default async function getBookInfo({author, title}) {
   // Let's search for the book based on title and author
-  const searchResponse = await fetch(`https://openlibrary.org/search.json?title=${replaceSpaces(title)}&author=${replaceSpaces(author)}`, {
+  const searchResponse = await fetch(`https://openlibrary.org/search.json?title=${encodeURIComponent(title)}&author=${encodeURIComponent(author)}`, {
     method: 'GET',
     headers: {
       Accept: 'application/json',  

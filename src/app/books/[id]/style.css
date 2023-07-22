@@ -9,8 +9,8 @@ section.view.detail h2 {
 
 section.view.detail h2 > .back {
   display: inline-block;
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 15px;
+  line-height: 15px;
   margin: 0 0 12px;
   color: var(--primary-color-light);
   transition: color 0.2s ease-in-out;
