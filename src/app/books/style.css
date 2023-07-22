@@ -9,8 +9,17 @@ ul.books {
 }
 
 ul.books > li {
+  position: relative;
   margin-bottom: calc(var(--default-padding)/2);
 }
+
+/*ul.books > li:hover:after {
+  content: 'Click for more info';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 12px;
+}*/
 
 ul.books > li > a {
   display: block;

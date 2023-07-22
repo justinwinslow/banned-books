@@ -17,9 +17,10 @@ section.view.detail h2 > .back {
 }
 
 section.view.detail h2 > .back:before {
-  content: '↵';
+  display: inline-block;
+  content: '➜';
   margin-right: 6px;
-  font-weight: bold;
+  transform: rotate(180deg);
 }
 
 section.view.detail h2 > .back:hover {
