@@ -14,6 +14,7 @@ export default function Detail() {
   const router = useRouter();
   const book = books.find((b) => kebabCase(`${b.Title}-${b.Author}`) == params.id);
   const [bookInfo, setBookInfo] = useState({});
+  const [loading, setLoading] = useState(true);
 
   function back(event) {
     event.preventDefault();
@@ -23,9 +24,10 @@ export default function Detail() {
   useEffect(() => {
     getBookInfo({
       title: book.Title,
-      author: `${book.Author.split(', ')[1]} ${book.Author.split(', ')[0]}`
+      author: `${book.Author.split(', ')[1]} ${book.Author.split(', ')[0]}` // Turn "Name, Your" into "Your Name"
     }).then((res) => {
       setBookInfo(res);
+      setLoading(false);
     });
   }, []);
 
@@ -38,7 +40,7 @@ export default function Detail() {
         {book.Title}<br />
         <span className="author">by {book.Author}</span>
       </h2>
-      <p>{bookInfo?.description?.value}</p>
+      {loading ? (<span className="loading-indicator"></span>) : (<p>{bookInfo?.description?.value || 'Description unavailable'}</p>)}
     </section>
   )
 }

@@ -101,3 +101,20 @@ body > nav a:hover {
     color-scheme: dark;
   }
 }
+
+@keyframes spin { 
+  100% { 
+    transform:rotate(360deg); 
+  } 
+}
+
+.loading-indicator {
+  display: inline-block;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-left-color: rgba(255,255,255,1);
+  animation:spin 1s linear infinite;
+}
+
