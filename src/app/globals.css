@@ -74,7 +74,32 @@ body > header {
   border-bottom: 1px solid #384557;
 }
 
+body > header h1:before {
+  content: ' ';
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid red;
+  position: relative;
+  top: 4px;
+  margin-right: 12px;
+}
+
+body > header h1:after {
+  content: ' ';
+  display: inline-block;
+  height: 27px;
+  width: 3px;
+  background-color: red;
+  position: absolute;
+  left: 13px;
+  top: 5px;
+  transform: rotate(-45deg);
+}
+
 body > header h1 {
+  position: relative;
   line-height: 1em;
   margin: 0;
   padding: 0;

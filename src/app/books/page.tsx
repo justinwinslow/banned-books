@@ -22,6 +22,9 @@ export default function Books() {
       const safeSearch = (search || '').toLowerCase();
       const titleMatch = b.Title.toLowerCase().includes(safeSearch);
       const authorMatch = b.Author.toLowerCase().includes(safeSearch);
+      // Split search and title into individual words without extra characters
+      // check distance between each search word and all title words
+      // math
       /* 
         TODO 
         [ ] Add loose matching 
