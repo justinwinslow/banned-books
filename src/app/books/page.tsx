@@ -19,12 +19,14 @@ export default function Books() {
 
   useEffect(() => {
     setFilteredBooks(books.filter(b => {
+      const safeSearch = (search || '').toLowerCase();
+      const titleMatch = b.Title.toLowerCase().includes(safeSearch);
+      const authorMatch = b.Author.toLowerCase().includes(safeSearch);
       /* 
         TODO 
         [ ] Add loose matching 
-        [ ] Include author in search
       */
-      return b.Title.toLowerCase().includes((search || '').toLowerCase()); // || levenshtein(b.Title, search) <= 2;
+      return titleMatch || authorMatch; // || levenshtein(b.Title, search) <= 2;
     })
     .sort((a, b) => {
       return a.Title.localeCompare(b.Title);
