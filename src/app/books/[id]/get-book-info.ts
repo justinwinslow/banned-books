@@ -1,6 +1,8 @@
 export default async function getBookInfo({author, title}) {
+  const root = 'https://openlibrary.org/search.json';
+  const url = `${root}?title=${encodeURIComponent(title)}&author=${encodeURIComponent(author)}`;
   // Let's search for the book based on title and author
-  const searchResponse = await fetch(`https://openlibrary.org/search.json?title=${encodeURIComponent(title)}&author=${encodeURIComponent(author)}`, {
+  const searchResponse = await fetch(url, {
     method: 'GET',
     headers: {
       Accept: 'application/json',  

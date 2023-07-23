@@ -1,14 +1,14 @@
-section.view.detail {
+.view.detail {
   padding: var(--default-padding);
 }
 
-section.view.detail h2 {
+.view.detail h2 {
   font-weight: normal;
   margin: 0 0 24px;
 }
 
-section.view.detail h2 > .back {
-  display: inline-block;
+.view.detail > .back {
+  display: block;
   font-size: 15px;
   line-height: 15px;
   margin: 0 0 12px;
@@ -16,19 +16,31 @@ section.view.detail h2 > .back {
   transition: color 0.2s ease-in-out;
 }
 
-section.view.detail h2 > .back:before {
+.view.detail > .back:before {
   display: inline-block;
   content: '➜';
   margin-right: 6px;
   transform: rotate(180deg);
 }
 
-section.view.detail h2 > .back:hover {
+.view.detail > .back:hover {
   color: #fff;
 }
 
-section.view.detail h2 > .author {
+.view.detail h2 > .author {
   font-style: italic;
   font-size: 15px;
   line-height: 15px;
+}
+
+.view.detail .cover-image {
+  margin: 0 0 12px 12px;
+  float: right;
+}
+
+@media (max-width: 600px) {
+  .view.detail .cover-image {
+    float: none;
+    margin-left: 0;
+  }
 }

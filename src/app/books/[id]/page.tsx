@@ -33,10 +33,11 @@ export default function Detail() {
 
   return (
     <section className="view detail">
+      <a className="back" href="/books" onClick={back}>
+        Back to search
+      </a>
+      {!loading && bookInfo?.covers?.length ? <img className="cover-image" src={`https://covers.openlibrary.org/b/id/${bookInfo.covers[0]}-M.jpg`} /> : null}
       <h2>
-        <a className="back" href="/books" onClick={back}>
-          Back to search
-        </a><br />
         {book.Title}<br />
         <span className="author">by {book.Author}</span>
       </h2>
