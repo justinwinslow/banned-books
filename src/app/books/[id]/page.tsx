@@ -45,6 +45,7 @@ export default function Detail() {
         <span className="author">by {book.Author}</span>
       </h2>
       {loading ? (<span className="loading-indicator"></span>) : (<p>{bookInfo?.description?.value || 'Description unavailable'}</p>)}
+      <br />
       <h3>Ban Information</h3>
       <table class="ban-info">
         <thead>
@@ -55,10 +56,10 @@ export default function Detail() {
           </tr>
         </thead>
         <tbody>
-          {book.bans.map((ban) =>(
-            <tr>
-              {banInfoCols.map((col) => (
-                <td>{ban[col]}</td>
+          {book.bans.map((ban, index) =>(
+            <tr key={`ban-row-${index}`}>
+              {banInfoCols.map((col, i) => (
+                <td key={`ban-row-${index}-col-${i}`}>{ban[col]}</td>
               ))}
             </tr>
           ))}

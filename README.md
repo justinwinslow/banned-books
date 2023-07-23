@@ -4,7 +4,8 @@ With all the recent book banning in the US I realized there wasn't an easily sea
 
 ## TODO
 
-- [ ] Improve searching to allow looser matches  
+- [ ] Improve searching to allow looser, weighted matches  
+- [ ] Filter on topics/keywords  
 - [ ] The current data source is static, this could maybe be dynamic or crowd-sourced  
 - [ ] ?  
 
@@ -23,5 +24,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Credits
 
-[Ban list](https://docs.google.com/spreadsheets/d/1hTs_PB7KuTMBtNMESFEGuK-0abzhNxVv4tgpI5-iKe8/edit#gid=1171606318)  
+[Ban list](https://pen.org/banned-in-the-usa/)  
 [Open Library](https://openlibrary.org/)

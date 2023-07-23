@@ -63,6 +63,12 @@ ul.books > li > a > header {
   transition: border-color 0.2s ease-in-out;
 }
 
+@media (max-width: 600px) {
+  ul.books > li > a > header {
+    padding: 18px 12px;
+  }
+}
+
 ul.books > li > a > section {
   display: block;
   padding: 12px;
