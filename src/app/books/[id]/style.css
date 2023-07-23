@@ -116,6 +116,10 @@
   border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
+.view.detail .ban-info > ul > li:only-child {
+  border-radius: var(--border-radius);
+}
+
 .view.detail .ban-info > ul > li {
   padding: 12px;
 }
