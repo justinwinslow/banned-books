@@ -15,7 +15,7 @@ import fixName from '../../util/fix-name';
 export default function Books() {
   const searchParams = useSearchParams();
   const search = searchParams.get('search');
-  const [filteredBooks, setFilteredBooks] = useState([].concat(books));
+  const [filteredBooks, setFilteredBooks] = useState([]);
 
   useEffect(() => {
     setFilteredBooks(books.filter(b => {
