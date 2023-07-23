@@ -81,7 +81,7 @@ body > header h1:before {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 3px solid red;
+  border: 3px solid #de5039;
   position: relative;
   top: 5px;
   margin-right: 9px;
@@ -92,7 +92,7 @@ body > header h1:after {
   display: inline-block;
   height: 27px;
   width: 3px;
-  background-color: red;
+  background-color: #de5039;
   position: absolute;
   left: 13px;
   top: 6px;
