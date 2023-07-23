@@ -19,13 +19,20 @@ export default function Books() {
 
   useEffect(() => {
     setFilteredBooks(books.filter(b => {
-      /* TODO - Add loose matching */
+      /* 
+        TODO 
+        [ ] Add loose matching 
+        [ ] Include author in search
+      */
       return b.Title.toLowerCase().includes((search || '').toLowerCase()); // || levenshtein(b.Title, search) <= 2;
     })
     .sort((a, b) => {
       return a.Title.localeCompare(b.Title);
     }));
-    /* TODO - Sort based on proximity to search query */
+    /* 
+      TODO 
+      [ ] Sort based on proximity to search query 
+    */
     // .sort((a, b) => {
     //   console.log(levenshtein(a.Title, search), levenshtein(b.Title, search));
     //   return levenshtein(b.Title, search) - levenshtein(a.Title, search);
