@@ -47,6 +47,10 @@ button:focus {
   outline: none;
 }
 
+::selection {
+  background-color: #ddd;
+}
+
 body > main {
   height: calc(100% - 80px);
   max-width: 100%;
@@ -67,6 +71,7 @@ body > header {
   overflow: hidden;
   box-shadow: 0 5px 5px rgb(0,0,0,0.1);
   position: relative;
+  border-bottom: 1px solid #384557;
 }
 
 body > header h1 {
