@@ -72,7 +72,7 @@ export default function Detail() {
             <li key={`ban-row-${index}`}>
               {banInfoCols.map((col, i) => (
                 <span key={`ban-row-${index}-col-${i}`}>
-                  <strong>{col}</strong>:&nbsp;
+                  <strong>{col}:</strong>&nbsp;
                   {ban[col]}
                 </span>
               ))}

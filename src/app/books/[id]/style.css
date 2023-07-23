@@ -141,6 +141,10 @@
   margin-bottom: 6px;
 }
 
+.view.detail .ban-info > ul > li > span strong {
+  color: var(--primary-color-light);
+}
+
 .view.detail .ban-info > ul > li > span:last-child {
   margin-bottom: 0;
 }
