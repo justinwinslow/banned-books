@@ -36,7 +36,7 @@ ul.books > li {
 ul.books > li > a {
   display: block;
   border: 1px solid var(--primary-color);
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   transition: border-color 0.2s ease-in-out;
 }
 
@@ -52,7 +52,13 @@ ul.books > li > a:hover {
 }
 
 ul.books > li > a:hover header {
- border-color: var(--primary-color-light); 
+  border-color: var(--primary-color-light); 
+}
+
+@media (max-width: 600px) {
+  ul.books > li > a:hover, ul.books > li > a:hover header {
+    border-color: var(--primary-color);
+  }
 }
 
 ul.books > li > a > header {
@@ -61,6 +67,7 @@ ul.books > li > a > header {
   border-bottom: 1px solid var(--primary-color);
   background-color: var(--primary-color-dark);
   transition: border-color 0.2s ease-in-out;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 @media (max-width: 600px) {
