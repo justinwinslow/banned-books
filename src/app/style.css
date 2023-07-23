@@ -29,4 +29,5 @@
   background-color: var(--secondary-color);
   width: 84px;
   text-align: center;
+  text-shadow: 0 1px 0 var(--secondary-color-dark);
 }

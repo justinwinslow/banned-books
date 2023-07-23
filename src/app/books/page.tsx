@@ -5,7 +5,7 @@ import './style.css';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import levenshtein from 'js-levenshtein';
+import Fuse from 'fuse.js'
 import { kebabCase } from 'lodash';
 import parseBooks from '../../util/parse-books';
 import books from '../../store/books';
@@ -18,30 +18,17 @@ export default function Books() {
   const [filteredBooks, setFilteredBooks] = useState([]);
 
   useEffect(() => {
-    setFilteredBooks(books.filter(b => {
-      const safeSearch = (search || '').toLowerCase();
-      const titleMatch = b.Title.toLowerCase().includes(safeSearch);
-      const authorMatch = b.Author.toLowerCase().includes(safeSearch);
-      // Split search and title into individual words without extra characters
-      // check distance between each search word and all title words
-      // math
-      /* 
-        TODO 
-        [ ] Add loose matching 
-      */
-      return titleMatch || authorMatch; // || levenshtein(b.Title, search) <= 2;
-    })
-    .sort((a, b) => {
-      return a.Title.localeCompare(b.Title);
-    }));
-    /* 
-      TODO 
-      [ ] Sort based on proximity to search query 
-    */
-    // .sort((a, b) => {
-    //   console.log(levenshtein(a.Title, search), levenshtein(b.Title, search));
-    //   return levenshtein(b.Title, search) - levenshtein(a.Title, search);
-    // });
+    const searcher = new Fuse(books.map(book => {
+      return {
+        author: fixName(book.Author),
+        title: book.Title,
+        book
+      }
+    }), {
+      keys: ['title', 'author'],
+      threshold: 0.3
+    });
+    setFilteredBooks(searcher.search(search).map(match => match.item.book));
   }, [search])
 
 
@@ -53,7 +40,7 @@ export default function Books() {
   return (
     <section className="view books">
       <ul className="books">
-        {!filteredBooks.length ? (<li class="no-results">No results found for: <strong>{search}</strong></li>) : (<></>)}
+        {!filteredBooks.length ? (<li className="no-results">No results found for: <strong>{search}</strong></li>) : (<></>)}
         {filteredBooks.map(b => (
           <li key={`${b.Title}-${b.Author}`}>
             <Link href={`/books/${encodeURIComponent(kebabCase(`${b.Title}-${b.Author}`))}`}>
