@@ -12,7 +12,7 @@ export default function Search({ route }) {
   const router = useRouter();
   const updateRoute = debounce(function() {
     router.push(`/${route}?search=${search}`);
-  }, 300);
+  }, 400);
 
   useEffect(updateRoute, [search]);
 

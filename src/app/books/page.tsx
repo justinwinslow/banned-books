@@ -18,6 +18,7 @@ export default function Books() {
   const [filteredBooks, setFilteredBooks] = useState([]);
 
   useEffect(() => {
+    if (!search) return setFilteredBooks(books.sort((a, b) => a.Title.localeCompare(b.Title)));
     const searcher = new Fuse(books.map(book => {
       return {
         author: fixName(book.Author),
