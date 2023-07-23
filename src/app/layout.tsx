@@ -14,16 +14,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const views = [
-    {
-      href: '/',
-      name: 'Home'
-    },
-    { 
-      href: '/books',
-      name: 'Books'
-    }
-  ];
+  // const views = [
+  //   {
+  //     href: '/',
+  //     name: 'Home'
+  //   },
+  //   { 
+  //     href: '/books',
+  //     name: 'Books'
+  //   }
+  // ];
 
   // Don't show banner search if on the home page
   const pathname = usePathname();

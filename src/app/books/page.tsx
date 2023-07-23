@@ -39,7 +39,8 @@ export default function Books() {
                 {b.Title}
               </header>
               <section>
-                by <strong>{b.Author}</strong>
+                <span className="author">by <strong>{b.Author}</strong></span>
+                <span className="bans">Known bans: {b.bans.length}</span>
               </section>
             </Link>
           </li>

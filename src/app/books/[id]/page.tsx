@@ -15,6 +15,9 @@ export default function Detail() {
   const book = books.find((b) => kebabCase(`${b.Title}-${b.Author}`) == params.id);
   const [bookInfo, setBookInfo] = useState({});
   const [loading, setLoading] = useState(true);
+  const banInfoCols = Object.keys(book.bans[0]);
+
+  console.log(book, banInfoCols);
 
   function back(event) {
     event.preventDefault();
@@ -42,6 +45,25 @@ export default function Detail() {
         <span className="author">by {book.Author}</span>
       </h2>
       {loading ? (<span className="loading-indicator"></span>) : (<p>{bookInfo?.description?.value || 'Description unavailable'}</p>)}
+      <h3>Ban Information</h3>
+      <table class="ban-info">
+        <thead>
+          <tr>
+            {banInfoCols.map(name => (
+              <th key={`col-${name}`}>{name}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {book.bans.map((ban) =>(
+            <tr>
+              {banInfoCols.map((col) => (
+                <td>{ban[col]}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </section>
   )
 }
