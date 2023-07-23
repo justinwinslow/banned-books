@@ -24,5 +24,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Credits
 
-[Ban list](https://pen.org/banned-in-the-usa/)  
+[PEN America](https://pen.org/banned-in-the-usa/)  
 [Open Library](https://openlibrary.org/)
