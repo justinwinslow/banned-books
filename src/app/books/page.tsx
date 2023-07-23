@@ -36,6 +36,7 @@ export default function Books() {
   /*
     TODO
     [ ] Save scroll position when navigating to detail views
+    [ ] Direct navigation doesn't work - probably a race condition
   */
 
   return (
