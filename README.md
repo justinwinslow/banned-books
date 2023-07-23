@@ -4,9 +4,9 @@ With all the recent book banning in the US I realized there wasn't an easily sea
 
 ## TODO
 
-[ ] Improve searching to allow looser matches  
-[ ] The current data source is static, this could maybe be dynamic or crowd-sourced  
-[ ] ?  
+- [ ] Improve searching to allow looser matches  
+- [ ] The current data source is static, this could maybe be dynamic or crowd-sourced  
+- [ ] ?  
 
 
 ## Running the app
