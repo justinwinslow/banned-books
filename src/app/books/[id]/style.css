@@ -55,7 +55,35 @@
   width: 100%;
 }
 
-.view.detail .ban-info thead tr th {
+.table-container {
+  border: 1px solid var(--primary-color-light);
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container table thead tr {
   white-space: nowrap;
   text-align: left;
+  background-color: var(--primary-color);
+  border-bottom: 1px solid var(--primary-color-light);
 }
+
+.table-container table th {
+  padding: 12px;
+}
+
+.table-container table td {
+  padding: 9px 12px;
+}
+
+.table-container table tbody tr:nth-child(odd) {
+  background-color: #232c37;
+}
+
+.table-container table tbody tr:nth-child(even) {
+  background-color: var(--primary-color-dark);
+}
+

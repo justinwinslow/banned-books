@@ -47,24 +47,26 @@ export default function Detail() {
       {loading ? (<span className="loading-indicator"></span>) : (<p>{bookInfo?.description?.value || 'Description unavailable'}</p>)}
       <br />
       <h3>Ban Information</h3>
-      <table class="ban-info">
-        <thead>
-          <tr>
-            {banInfoCols.map(name => (
-              <th key={`col-${name}`}>{name}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {book.bans.map((ban, index) =>(
-            <tr key={`ban-row-${index}`}>
-              {banInfoCols.map((col, i) => (
-                <td key={`ban-row-${index}-col-${i}`}>{ban[col]}</td>
+      <div className="table-container">
+        <table>
+          <thead>
+            <tr>
+              {banInfoCols.map(name => (
+                <th key={`col-${name}`}>{name}</th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {book.bans.map((ban, index) =>(
+              <tr key={`ban-row-${index}`}>
+                {banInfoCols.map((col, i) => (
+                  <td key={`ban-row-${index}-col-${i}`}>{ban[col]}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </section>
   )
 }

@@ -6,6 +6,7 @@ With all the recent book banning in the US I realized there wasn't an easily sea
 
 - [ ] Improve searching to allow looser, weighted matches  
 - [ ] Filter on topics/keywords  
+- [ ] User controlled sorting?  
 - [ ] The current data source is static, this could maybe be dynamic or crowd-sourced  
 - [ ] ?  
 
