@@ -30,6 +30,10 @@ export default function Books() {
     // });
   }
 
+  /*
+    TODO - Save scroll position when navigating to detail views
+  */
+
   return (
     <section className="view books">
       <ul className="books">
