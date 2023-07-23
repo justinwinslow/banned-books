@@ -68,6 +68,7 @@ ul.books > li > a > header {
   background-color: var(--primary-color-dark);
   transition: border-color 0.2s ease-in-out;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
+  text-decoration: underline;
 }
 
 @media (max-width: 600px) {
