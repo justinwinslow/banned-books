@@ -35,13 +35,13 @@ export default function Books() {
 
   /*
     TODO
-    [ ] No Results state
     [ ] Save scroll position when navigating to detail views
   */
 
   return (
     <section className="view books">
       <ul className="books">
+        {!filteredBooks.length ? (<li class="no-results">No results found for: <strong>{search}</strong></li>) : (<></>)}
         {filteredBooks.map(b => (
           <li key={`${b.Title}-${b.Author}`}>
             <Link href={`/books/${encodeURIComponent(kebabCase(`${b.Title}-${b.Author}`))}`}>

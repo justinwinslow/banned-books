@@ -23,6 +23,9 @@ ul.books > li {
   ul.books > li {
     margin-bottom: 0;
   }
+  ul.books > li.no-results {
+    padding: var(--default-padding);
+  }
 }
 
 /*ul.books > li:hover:after {
