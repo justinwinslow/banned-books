@@ -22,7 +22,7 @@ export default function Search({ route }) {
         value={search} 
         type="text" 
         name="search" 
-        placeholder="Search by title" 
+        placeholder="Search by title or author" 
         onChange={(e) => setSearch(e.target.value)}
       />
     </div>

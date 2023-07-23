@@ -24,7 +24,7 @@ export default function Home() {
     <input 
       value={search} 
       type="text" 
-      placeholder="Search by title" 
+      placeholder="Search by title or author" 
       onChange={(e) => setSearch(e.target.value)} 
       onKeyUp={handleKeyUp}
     />
