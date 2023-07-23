@@ -53,6 +53,13 @@
 .view.detail .ban-info {
   clear: both;
   width: 100%;
+  display: none;
+}
+
+@media (min-width: 721px) {
+  .view.detail .ban-info.desktop {
+    display: block;
+  }
 }
 
 .table-container {
@@ -87,3 +94,41 @@
   background-color: var(--primary-color-dark);
 }
 
+@media (max-width: 720px) {
+  .view.detail .ban-info.mobile {
+    display: block;
+  }
+}
+
+.view.detail .ban-info > ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--primary-color-light);
+  border-radius: 4px;
+}
+
+.view.detail .ban-info > ul > li {
+  padding: 12px;
+}
+
+.view.detail .ban-info > ul > li:nth-child(odd) {
+  background-color: #232c37;
+}
+
+.view.detail .ban-info > ul > li:nth-child(even) {
+  background-color: var(--primary-color-dark);
+}
+
+.view.detail .ban-info > ul > li:not(:last-child) {
+  border-bottom: 1px solid var(--primary-color-light);
+}
+
+.view.detail .ban-info > ul > li > span {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.view.detail .ban-info > ul > li > span:last-child {
+  margin-bottom: 0;
+}

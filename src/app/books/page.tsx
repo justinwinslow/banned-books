@@ -8,6 +8,7 @@ import levenshtein from 'js-levenshtein';
 import { kebabCase } from 'lodash';
 import parseBooks from '../../util/parse-books';
 import books from '../../store/books';
+import fixName from '../../util/fix-name';
 
 
 export default function Books() {
@@ -39,7 +40,7 @@ export default function Books() {
                 {b.Title}
               </header>
               <section>
-                <span className="author">by <strong>{b.Author}</strong></span>
+                <span className="author">by <strong>{fixName(b.Author)}</strong></span>
                 <span className="bans">Known bans: {b.bans.length}</span>
               </section>
             </Link>
