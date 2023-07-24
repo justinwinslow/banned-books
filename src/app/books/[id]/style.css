@@ -13,6 +13,7 @@
   margin: 0 0 12px;
   color: var(--primary-color-text);
   transition: color 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 .view.detail > .back:before {
@@ -30,6 +31,11 @@
   font-style: italic;
   font-size: 15px;
   line-height: 15px;
+  color: var(--primary-color-text);
+}
+
+.view.detail h2 > .author a {
+  text-decoration: underline;
 }
 
 .view.detail .cover-image {

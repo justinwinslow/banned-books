@@ -41,6 +41,8 @@ ul.books > li > a {
   border: 1px solid var(--primary-color);
   border-radius: var(--border-radius);
   transition: border-color 0.2s ease-in-out;
+  text-decoration: none;
+  color: #fff;
 }
 
 @media (max-width: 600px) {

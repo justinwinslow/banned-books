@@ -40,8 +40,3 @@
   left: 50%;
   transform: translateX(-50%);
 }
-
-.view.root .donation-link a {
-  color: var(--secondary-color);
-  text-decoration: underline;
-}

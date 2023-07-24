@@ -12,3 +12,16 @@
   width: 305px;
   float: right;
 }
+
+.view.about .donate iframe {
+  border: none;
+}
+
+.view.about ul {
+  padding: 0 0 0 15px;
+  margin: 0;
+}
+
+.view.about ul li {
+  margin: 0 0 12px;
+}

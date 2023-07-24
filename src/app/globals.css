@@ -34,12 +34,8 @@ body {
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a.active {
   color: var(--secondary-color);
+  text-decoration: underline;
 }
 
 h1, h2, h3 {
@@ -113,6 +109,10 @@ body > header h1 {
   padding: 0;
   float: left;
   font-weight: normal;
+}
+
+body > header a {
+  color: #fff;
 }
 
 body > header .global-search {
