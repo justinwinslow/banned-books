@@ -84,7 +84,7 @@ ul.books > li > a > section {
   display: block;
   padding: 12px;
   font-size: 12px;
-  color: var(--primary-color-light);
+  color: var(--primary-color-text);
 }
 
 ul.books > li > a > section .author {

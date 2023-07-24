@@ -11,7 +11,7 @@
   font-size: 15px;
   line-height: 15px;
   margin: 0 0 12px;
-  color: var(--primary-color-light);
+  color: var(--primary-color-text);
   transition: color 0.2s ease-in-out;
 }
 
@@ -140,7 +140,7 @@
 }
 
 .view.detail .ban-info > ul > li > span strong {
-  color: var(--primary-color-light);
+  color: var(--primary-color-text);
 }
 
 .view.detail .ban-info > ul > li > span:last-child {
