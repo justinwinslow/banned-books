@@ -31,3 +31,17 @@
   text-align: center;
   text-shadow: 0 1px 0 var(--secondary-color-dark);
 }
+
+.view.root .donation-link {
+  margin-top: 12px;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.view.root .donation-link a {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}

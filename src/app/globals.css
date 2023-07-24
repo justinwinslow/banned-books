@@ -41,6 +41,11 @@ a.active {
   color: var(--secondary-color);
 }
 
+h1, h2, h3 {
+  font-weight: normal;
+  margin-top: 0;
+}
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -85,6 +90,7 @@ body > header h1:before {
   position: relative;
   top: 5px;
   margin-right: 9px;
+  box-shadow: 0 0.5px 0 rgba(255,255,255,0.2);
 }
 
 body > header h1:after {

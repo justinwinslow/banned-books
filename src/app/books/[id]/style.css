@@ -3,7 +3,6 @@
 }
 
 .view.detail h2 {
-  font-weight: normal;
   margin: 0 0 24px;
 }
 
@@ -47,7 +46,6 @@
 
 .view.detail h3 {
   clear: both;
-  font-weight: normal;
 }
 
 .view.detail .ban-info {

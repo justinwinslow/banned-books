@@ -4,6 +4,7 @@ import './style.css';
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function Home() {
   const router = useRouter();
@@ -34,6 +35,9 @@ export default function Home() {
     <section className="view root">
       <div className="root-search">
         {input}{button}
+      </div>
+      <div className="donation-link">
+        If you like and want to support this project you can <Link href={"/about"}>learn more and donate here.</Link>
       </div>
     </section>
   )

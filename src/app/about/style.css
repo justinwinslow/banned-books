@@ -1,0 +1,14 @@
+.view.about {
+  padding: var(--default-padding);
+}
+
+.view.about .info {
+  width: calc(100% - 305px);
+  padding-right: 24px;
+  float: left;
+}
+
+.view.about .donate {
+  width: 305px;
+  float: right;
+}
