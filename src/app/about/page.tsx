@@ -23,7 +23,7 @@ export default function Donate() {
         <h2>Credits</h2>
         <ul>
           <li>Ban data provided by <a href="https://pen.org/banned-in-the-usa/#what" target="_blank">PEN America</a></li>
-          <li>Supplemental data provided <a href="https://openlibrary.org/" target="_blank">Open Library</a></li>
+          <li>Supplemental data provided by <a href="https://openlibrary.org/" target="_blank">Open Library</a></li>
         </ul>
       </div>
       <div className="donate">
