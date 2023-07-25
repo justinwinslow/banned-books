@@ -39,6 +39,17 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'" />
+        <meta name="theme-color" content="#2a3544" />
+        <meta name="description" content="A search engine for banned books" />
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="subject" content="School book bans" />
+        <meta name="rating" content="General" />
+        <title>School Book Bans</title>
+      </head>
       <body>
         <header>
           <Link href="/">
