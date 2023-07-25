@@ -29,10 +29,10 @@ export default function Donate() {
       </div>
       <div className="donate">
         <iframe 
-          id='kofiframe' 
-          src='https://ko-fi.com/justinwinslow/?hidefeed=true&widget=true&embed=true&preview=true' 
-          height='712' 
-          title='justinwinslow'
+          id="kofiframe" 
+          src="https://ko-fi.com/justinwinslow/?hidefeed=true&widget=true&embed=true&preview=true"
+          height="560"
+          title="justinwinslow"
         ></iframe>
       </div>
     </section>
