@@ -10,24 +10,38 @@ import fixName from '../../../util/fix-name';
 
 import books from '../../../store/books';
 
+// interface Book {
+//   Author: string,
+//   Title: string,
+//   'Secondary Author(s)': string,
+//   'Illustrator(s)': string,
+//   'Translator(s)': string,
+//   bans: object[]
+// }
+
+interface BookInfo {
+  description: {value: string},
+  covers: string[]
+}
+
 export default function Detail() {
   const params = useParams();
   const router = useRouter();
   const book = books.find((b) => kebabCase(`${b.Title}-${b.Author}`) == params.id);
-  const [bookInfo, setBookInfo] = useState({});
+  const [bookInfo, setBookInfo] = useState<BookInfo>({
+    description: {value: ''},
+    covers: []
+  });
   const [loading, setLoading] = useState(true);
-  const banInfoCols = Object.keys(book.bans[0]);
+  const banInfoCols = Object.keys(book?.bans[0] || {});
 
-  function back(event) {
+  function back(event: React.MouseEvent) {
     event.preventDefault();
     router.back();
   }
 
   useEffect(() => {
-    getBookInfo({
-      title: book.Title,
-      author: fixName(book.Author)
-    }).then((res) => {
+    getBookInfo({author: fixName(book?.Author || ''), title: book?.Title || ''}).then((res) => {
       setBookInfo(res);
       setLoading(false);
     });
@@ -40,8 +54,8 @@ export default function Detail() {
       </a>
       {!loading && bookInfo?.covers?.length ? <img className="cover-image" src={`https://covers.openlibrary.org/b/id/${bookInfo.covers[0]}-M.jpg`} /> : null}
       <h2>
-        {book.Title}<br />
-        <span className="author">by {fixName(book.Author)}</span>
+        {book?.Title}<br />
+        <span className="author">by {fixName(book?.Author || '')}</span>
       </h2>
       {loading ? (<span className="loading-indicator"></span>) : (<p>{bookInfo?.description?.value || 'Description unavailable'}</p>)}
       <br />
@@ -56,10 +70,10 @@ export default function Detail() {
             </tr>
           </thead>
           <tbody>
-            {book.bans.map((ban, index) =>(
+            {book?.bans.map((ban: object, index: number): any => (
               <tr key={`ban-row-${index}`}>
-                {banInfoCols.map((col, i) => (
-                  <td key={`ban-row-${index}-col-${i}`}>{ban[col]}</td>
+                {banInfoCols.map((col: string, i: number): any => (
+                  <td key={`ban-row-${index}-col-${i}`}>{ban[col as keyof object]}</td>
                 ))}
               </tr>
             ))}
@@ -68,12 +82,12 @@ export default function Detail() {
       </div>
       <div className="ban-info mobile">
         <ul>
-          {book.bans.map((ban, index) => (
+          {book?.bans.map((ban: object, index: number): any => (
             <li key={`ban-row-${index}`}>
-              {banInfoCols.map((col, i) => (
+              {banInfoCols.map((col: string, i: number): any => (
                 <span key={`ban-row-${index}-col-${i}`}>
                   <strong>{col}:</strong>&nbsp;
-                  {ban[col]}
+                  {ban[col as keyof object]}
                 </span>
               ))}
             </li>

@@ -15,7 +15,7 @@ import fixName from '../../util/fix-name';
 export default function Books() {
   const searchParams = useSearchParams();
   const search = searchParams.get('search');
-  const [filteredBooks, setFilteredBooks] = useState([]);
+  const [filteredBooks, setFilteredBooks] = useState<any[]>([]);
 
   useEffect(() => {
     if (!search) return setFilteredBooks(books.sort((a, b) => a.Title.localeCompare(b.Title)));

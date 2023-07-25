@@ -13,7 +13,7 @@ export default function Home() {
     router.push(`/books?search=${search}`);
   }
 
-  function handleKeyUp(event) {
+  function handleKeyUp(event: React.KeyboardEvent) {
     if (event.key == 'Enter') doSearch();
   }
 

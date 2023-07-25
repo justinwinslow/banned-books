@@ -7,7 +7,6 @@ import { Shadows_Into_Light } from 'next/font/google';
 import Link from 'next/link';
 import Head from 'next/head';
 import Search from '../components/search';
-import Navigation from '../components/navigation';
 
 import { usePathname } from 'next/navigation';
 
@@ -40,7 +39,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <meta charset="utf-8" />
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'" />
         <meta name="theme-color" content="#2a3544" />
         <meta name="description" content="A search engine for banned books" />
@@ -58,7 +56,6 @@ export default function RootLayout({
           </Link>
           {showGlobalSearch()}
         </header>
-        {/*<Navigation navLinks={views} />*/}
         <main>
           {children}
         </main>

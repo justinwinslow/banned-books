@@ -1,4 +1,4 @@
-export default async function getBookInfo({author, title}) {
+export default async function getBookInfo({author, title} : {author: string, title: string}) {
   const root = 'https://openlibrary.org/search.json';
   const url = `${root}?title=${encodeURIComponent(title)}&author=${encodeURIComponent(author)}`;
   // Let's search for the book based on title and author

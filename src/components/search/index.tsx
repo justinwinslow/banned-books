@@ -6,9 +6,9 @@ import { debounce } from 'lodash';
 import { useCallback, useEffect, useState} from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
  
-export default function Search({ route }) {
+export default function Search({ route }: {route: string}) {
   const searchParams = useSearchParams();
-  const [search, setSearch] = useState(searchParams.get('search'));
+  const [search, setSearch] = useState<string>(searchParams.get('search') || '');
   const router = useRouter();
   const updateRoute = debounce(function() {
     router.push(`/${route}?search=${search}`);
