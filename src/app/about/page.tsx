@@ -10,8 +10,8 @@ export default function Donate() {
           So, I set out to create this site to improve the transparency around our current censorious moment.
         </p>
         <p>
-          There is a lot more I want to do – like add better filtering, include more information about bans, 
-          provide resources for activism, and more – but time is money. 
+          There is a lot more I want to do &ndash; like add better filtering, include more information about bans, 
+          provide resources for activism, and more &ndash; but time is money. 
           Any contribution you make can help me budget more time to this project. 
         </p>
         <p>
