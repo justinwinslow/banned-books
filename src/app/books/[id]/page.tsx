@@ -19,6 +19,12 @@ import books from '../../../store/books';
 //   bans: object[]
 // }
 
+export async function generateStaticParams() {
+  return books.map((book) => ({
+    id: kebabCase(`${book.Title}-${book.Author}`),
+  }))
+}
+
 interface BookInfo {
   description: {value: string},
   covers: string[]
