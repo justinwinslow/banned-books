@@ -3,14 +3,14 @@
 import '/node_modules/normalize.css/normalize.css';
 import './globals.css';
 
-import { Arvo, Shadows_Into_Light } from 'next/font/google';
+import { Shadows_Into_Light } from 'next/font/google';
 import Link from 'next/link';
+import Head from 'next/head';
 import Search from '../components/search';
 import Navigation from '../components/navigation';
 
 import { usePathname } from 'next/navigation';
 
-const arvo = Arvo({ weight: '400', subsets: ['latin'] });
 const shadowsIntoLight = Shadows_Into_Light({ weight: '400', subsets: ['latin'] });
 
 export default function RootLayout({
@@ -39,7 +39,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <head>
+      <Head>
         <meta charset="utf-8" />
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'" />
         <meta name="theme-color" content="#2a3544" />
@@ -48,8 +48,9 @@ export default function RootLayout({
         <meta name="googlebot" content="index,follow" />
         <meta name="subject" content="School book bans" />
         <meta name="rating" content="General" />
+        <link rel="icon" sizes="192x192" href="/icon.png" />
         <title>School Book Bans</title>
-      </head>
+      </Head>
       <body>
         <header>
           <Link href="/">
