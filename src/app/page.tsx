@@ -37,7 +37,7 @@ export default function Home() {
         {input}{button}
       </div>
       <div className="donation-link">
-        If you like and want to support this project you can <Link href={"/about"}>learn more and donate here.</Link>
+        If you like and want to support this project you can <Link href={"/about"}>learn more and donate here</Link>.
       </div>
     </section>
   )

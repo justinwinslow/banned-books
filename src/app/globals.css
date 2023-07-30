@@ -55,20 +55,29 @@ button:focus {
 }
 
 body > main {
-  height: calc(100% - 83px);
+  height: calc(100% - 89px);
   max-width: 100%;
   overflow: auto;
 }
 
+/* 
+  Special handling for mobile devices
+  when the search is present in the 
+  header
+*/
 @media (max-width: 600px) {
-  body > main {
+  body > main.with-search {
     height: calc(100% - 121px);
   }
 }
+/*
+ /
+*/
 
 body > header {
   display: block;
   width: 100%;
+  max-width: 100%;
   padding: var(--default-padding);
   background-color: var(--primary-color);
   overflow: hidden;

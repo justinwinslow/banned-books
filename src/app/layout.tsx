@@ -56,7 +56,7 @@ export default function RootLayout({
           </Link>
           {showGlobalSearch()}
         </header>
-        <main>
+        <main className={showGlobalSearch() ? 'with-search' : ''}>
           {children}
         </main>
       </body>
