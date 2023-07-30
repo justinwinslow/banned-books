@@ -15,7 +15,8 @@ export const metadata: Metadata = {
       url: '/icon.png',
       type: 'image/png',
     }
-  }
+  },
+  viewport: 'width=device-width, initial-scale=1, max-scale=1'
 }
 
 const shadowsIntoLight = Shadows_Into_Light({ weight: '400', subsets: ['latin'] });
