@@ -1,4 +1,5 @@
 .view.books {
+  position: relative;
   padding: var(--default-padding);
 }
 
@@ -8,10 +9,32 @@
   }
 }
 
+.view.books .search-wrapper {
+  position: fixed;
+  z-index: 1;
+  top: 83px;
+  left: 0;
+  padding: calc(var(--default-padding)/2) var(--default-padding);
+  background-color: var(--primary-color);
+  width: 100%;
+  box-shadow: 0 5px 5px rgb(0,0,0,0.1);
+  border-bottom: 1px solid var(--primary-color-light);
+}
+
+@media (max-width: 600px) {
+  .view.books .search-wrapper {
+    padding: calc(var(--default-padding)/2);
+  }
+}
+
+.view.books .search-wrapper .search {
+  width: 100%;
+}
+
 ul.books {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 56px 0 0;
 }
 
 ul.books > li {

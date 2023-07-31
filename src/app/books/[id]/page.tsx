@@ -47,10 +47,14 @@ export default function Detail() {
   }
 
   useEffect(() => {
-    getBookInfo({author: fixName(book?.Author || ''), title: book?.Title || ''}).then((res) => {
-      setBookInfo(res);
-      setLoading(false);
-    });
+    getBookInfo({author: fixName(book?.Author || ''), title: book?.Title || ''})
+      .then((res) => {
+        setBookInfo(res);
+        setLoading(false);
+      })
+      .catch(e => {
+        setLoading(false);
+      });
   }, []);
 
   return (
@@ -63,7 +67,7 @@ export default function Detail() {
         {book?.Title}<br />
         <span className="author">by {fixName(book?.Author || '')}</span>
       </h2>
-      {loading ? (<span className="loading-indicator"></span>) : (<p>{bookInfo?.description?.value || 'Description unavailable'}</p>)}
+      {loading ? (<p><span className="loading-indicator"></span></p>) : (<p>{bookInfo?.description?.value || 'Description unavailable'}</p>)}
       <br />
       <h3>Ban Information</h3>
       <div className="table-container ban-info desktop">

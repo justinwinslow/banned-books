@@ -4,7 +4,6 @@ import './globals.css';
 import { Shadows_Into_Light } from 'next/font/google';
 import Link from 'next/link';
 import Head from 'next/head';
-import Search from '../components/search';
 import { Metadata } from 'next'
  
 export const metadata: Metadata = {
@@ -38,7 +37,6 @@ export default function RootLayout({
           <Link href="/">
             <h1 className={shadowsIntoLight.className}>School Book Bans</h1>
           </Link>
-          <Search route="books" />
         </header>
         <main>
           {children}

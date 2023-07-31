@@ -10,7 +10,7 @@ import { kebabCase } from 'lodash';
 import parseBooks from '../../util/parse-books';
 import books from '../../store/books';
 import fixName from '../../util/fix-name';
-
+import Search from '../../components/search';
 
 export default function Books() {
   const searchParams = useSearchParams();
@@ -36,11 +36,13 @@ export default function Books() {
   /*
     TODO
     [ ] Save scroll position when navigating to detail views
-    [ ] Direct navigation doesn't work - probably a race condition
   */
 
   return (
     <section className="view books">
+      <div className="search-wrapper">
+        <Search route="books" />
+      </div>
       <ul className="books">
         {!filteredBooks.length ? (<li className="no-results">No results found for: <strong>{search}</strong></li>) : (<></>)}
         {filteredBooks.map(b => (

@@ -7,6 +7,7 @@ With all the recent book banning in the US I realized there wasn't an easily sea
 - [ ] Filter on topics/keywords  
 - [ ] User controlled sorting?  
 - [ ] The current data source is static, this could maybe be dynamic or crowd-sourced  
+- [ ] Wire up gh actions to build and push changes to my server or investigate Vercel
 - [ ] ?  
 
 

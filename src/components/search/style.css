@@ -1,10 +1,10 @@
-.global-search {
+.search {
   display: inline-block;
   height: 32px;
   border-radius: var(--border-radius);
 }
 
-.global-search:after {
+.search:after {
   content: '🔍';
   width: 32px;
   display: inline-block;
@@ -16,7 +16,7 @@
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
-.global-search > input {
+.search > input {
   width: calc(100% - 32px);
   background-color: #fff;
   border: none;

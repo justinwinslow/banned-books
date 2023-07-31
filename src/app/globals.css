@@ -58,20 +58,19 @@ button:focus {
 
 body > main {
   flex: 1 1 auto;
-  max-width: 100%;
   overflow: auto;
 }
 
 body > header {
   flex: 0 0 auto;
   width: 100%;
-  max-width: 100%;
   padding: var(--default-padding);
   background-color: var(--primary-color);
   overflow: hidden;
   box-shadow: 0 5px 5px rgb(0,0,0,0.1);
   position: relative;
   border-bottom: 1px solid #384557;
+  z-index: 10;
 }
 
 body > header h1:before {
@@ -111,21 +110,6 @@ body > header h1 {
 body > header a {
   color: #fff;
   text-decoration: none;
-}
-
-body > header .global-search {
-  float: right;
-}
-
-@media (max-width: 600px) {
-  body > header h1 {
-    float: none;
-    margin-bottom: 6px;
-  }
-  body > header .global-search {
-    float: none;
-    width: 100%;
-  }
 }
 
 body > nav a {
