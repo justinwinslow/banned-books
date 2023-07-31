@@ -26,7 +26,7 @@ export function generateStaticParams() {
 }
 
 interface BookInfo {
-  description: {value: string},
+  description: string,
   covers: string[]
 }
 
@@ -35,7 +35,7 @@ export default function Detail() {
   const router = useRouter();
   const book = books.find((b) => kebabCase(`${b.Title}-${b.Author}`) == params.id);
   const [bookInfo, setBookInfo] = useState<BookInfo>({
-    description: {value: ''},
+    description: '',
     covers: []
   });
   const [loading, setLoading] = useState(true);
@@ -67,7 +67,7 @@ export default function Detail() {
         {book?.Title}<br />
         <span className="author">by {fixName(book?.Author || '')}</span>
       </h2>
-      {loading ? (<p><span className="loading-indicator"></span></p>) : (<p>{bookInfo?.description?.value || 'Description unavailable'}</p>)}
+      {loading ? (<p><span className="loading-indicator"></span></p>) : (<p>{bookInfo?.description || 'Description unavailable'}</p>)}
       <br />
       <h3>Ban Information</h3>
       <div className="table-container ban-info desktop">

@@ -1,3 +1,17 @@
+function simplifyBookInfo(bookInfo: any) {
+  if (typeof bookInfo.description == 'object') {
+    // Descriptions come back in a couple different formats
+    // Maybe a matter of an older data model
+    bookInfo.description = bookInfo.description?.value || '';
+  }
+  if (bookInfo.covers?.length) {
+    // I noticed sometimes there will be erroneous values in the
+    // data set, so let's filter anything that doesn't make sense
+    bookInfo.covers = bookInfo.covers.filter((c: number) => c > 0);
+  }
+  return bookInfo;
+}
+
 export default async function getBookInfo({author, title} : {author: string, title: string}) {
   const root = 'https://openlibrary.org/search.json';
   const url = `${root}?title=${encodeURIComponent(title)}&author=${encodeURIComponent(author)}`;
@@ -29,5 +43,5 @@ export default async function getBookInfo({author, title} : {author: string, tit
   // Unrwrap the response
   const bookInfo = await bookResponse.json();
 
-  return bookInfo;  
+  return simplifyBookInfo(bookInfo);
 }
