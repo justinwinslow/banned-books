@@ -2,6 +2,8 @@
 
 With all the recent book banning in the US I realized there wasn't an easily searchable index of all the various bans. So, I set out to create this to improve the transparency around our current censorious moment.
 
+Currently live at [https://bookban.info/](https://bookban.info/)
+
 ## TODO
 
 - [ ] Filter on topics/keywords  
