@@ -60,8 +60,14 @@ export default function Detail() {
         <span className="author">by {fixName(book?.Author || '')}</span>
       </h2>
       {loading ? (<p><span className="loading-indicator"></span></p>) : (<p>{bookInfo?.description || 'Description unavailable'}</p>)}
+      <p>
+        <a target="_blank" href={`https://www.amazon.com/gp/search?ie=UTF8&tag=bannedbook002-20&linkCode=ur2&linkId=ee83837352744107a9bc8d5e2e2864e4&camp=1789&creative=9325&index=books&keywords=${book?.Title} ${fixName(book?.Author || '')}`}>
+          Buy on Amazon
+        </a>
+      </p>
       <br />
       <h3>Ban Information</h3>
+      {/* For large screens we'll show a table */}
       <div className="table-container ban-info desktop">
         <table>
           <thead>
@@ -82,6 +88,7 @@ export default function Detail() {
           </tbody>
         </table>
       </div>
+      {/* For small screens we'll show a list */}
       <div className="ban-info mobile">
         <ul>
           {book?.bans.map((ban: object, index: number): any => (
