@@ -10,14 +10,6 @@ import fixName from '../../../util/fix-name';
 
 import books from '../../../store/books';
 
-// interface Book {
-//   Author: string,
-//   Title: string,
-//   'Secondary Author(s)': string,
-//   'Illustrator(s)': string,
-//   'Translator(s)': string,
-//   bans: object[]
-// }
 
 export function generateStaticParams() {
   return books.map((book) => ({

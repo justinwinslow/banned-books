@@ -21,14 +21,9 @@ export const metadata: Metadata = {
 const shadowsIntoLight = Shadows_Into_Light({ weight: '400', subsets: ['latin'] });
 
 export default function RootLayout({
-  children,
-  params
+  children
 }: {
-  children: React.ReactNode,
-  params: {
-    page: string,
-    id: string
-  }
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
