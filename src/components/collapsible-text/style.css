@@ -7,9 +7,9 @@
 }
 
 .collapsible-text.expanded::after {
-  content: 'Read Less';
+  content: 'Read Less -';
 }
 
 .collapsible-text.collapsed::after {
-  content: 'Read More';
+  content: 'Read More +';
 }
