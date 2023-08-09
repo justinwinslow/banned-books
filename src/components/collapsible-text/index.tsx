@@ -1,6 +1,6 @@
 import './style.css';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function CollapsibleText({ content, maxWordCount, defaultContent }: {content: string, maxWordCount: number, defaultContent: any}) {
   defaultContent = defaultContent || 'No text provided';
