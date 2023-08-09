@@ -5,6 +5,7 @@ import './style.css';
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { kebabCase } from 'lodash';
+import CollapsibleText from '../../../components/collapsible-text';
 import getBookInfo from './get-book-info';
 import fixName from '../../../util/fix-name';
 
@@ -59,7 +60,7 @@ export default function Detail() {
         {book?.Title}<br />
         <span className="author">by {fixName(book?.Author || '')}</span>
       </h2>
-      {loading ? (<p><span className="loading-indicator"></span></p>) : (<p>{bookInfo?.description || 'Description unavailable'}</p>)}
+      {loading ? (<p><span className="loading-indicator"></span></p>) : (<CollapsibleText content={bookInfo?.description} defaultContent="Description unavailable"></CollapsibleText>)}
       <p>
         <a target="_blank" href={`https://www.amazon.com/gp/search?ie=UTF8&tag=bannedbook002-20&linkCode=ur2&linkId=ee83837352744107a9bc8d5e2e2864e4&camp=1789&creative=9325&index=books&keywords=${book?.Title} ${fixName(book?.Author || '')}`}>
           Buy on Amazon

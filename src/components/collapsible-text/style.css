@@ -1,0 +1,15 @@
+.collapsible-text {
+  cursor: pointer;
+}
+
+.collapsible-text::after {
+  color: var(--primary-color-text);
+}
+
+.collapsible-text.expanded::after {
+  content: 'Read Less';
+}
+
+.collapsible-text.collapsed::after {
+  content: 'Read More';
+}
