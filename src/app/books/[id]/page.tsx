@@ -11,6 +11,13 @@ import fixName from '../../../util/fix-name';
 
 import books from '../../../store/books';
 
+type Ban = {
+  'State District': string,
+  'Date of Challenge/Removal': string,
+  'Origin of Challenge': string,
+  'Type of Ban': string
+}
+
 
 export function generateStaticParams() {
   return books.map((book) => ({
@@ -50,6 +57,10 @@ export default function Detail() {
       });
   }, []);
 
+  function sortBans(bans: any[]) {
+    return bans.sort((a:Ban, b:Ban): number => Date.parse(a?.['Date of Challenge/Removal'] || 0) - Date.parse(b?.['Date of Challenge/Removal'] || 0));
+  }
+
   return (
     <section className="view detail">
       <a className="back" href="/books" onClick={back}>
@@ -79,7 +90,7 @@ export default function Detail() {
             </tr>
           </thead>
           <tbody>
-            {book?.bans.map((ban: object, index: number): any => (
+            {sortBans(book?.bans || []).map((ban: Ban, index: number): any => (
               <tr key={`ban-row-${index}`}>
                 {banInfoCols.map((col: string, i: number): any => (
                   <td key={`ban-row-${index}-col-${i}`}>{ban[col as keyof object]}</td>
@@ -92,7 +103,7 @@ export default function Detail() {
       {/* For small screens we'll show a list */}
       <div className="ban-info mobile">
         <ul>
-          {book?.bans.map((ban: object, index: number): any => (
+          {sortBans(book?.bans || []).map((ban: object, index: number): any => (
             <li key={`ban-row-${index}`}>
               {banInfoCols.map((col: string, i: number): any => (
                 <span key={`ban-row-${index}-col-${i}`}>

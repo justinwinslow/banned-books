@@ -6,7 +6,6 @@ Currently live at [https://bookban.info/](https://bookban.info/)
 
 ## TODO
 
-- [ ] Sort bans by date 
 - [ ] Filter on topics/keywords  
 - [ ] User controlled sorting?  
 - [ ] The current data source is static, this could maybe be dynamic or crowd-sourced  
