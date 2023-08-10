@@ -58,7 +58,7 @@ export default function Detail() {
       {!loading && bookInfo?.covers?.length ? <img className="cover-image" src={`https://covers.openlibrary.org/b/id/${bookInfo.covers[0]}-M.jpg`} /> : null}
       <h2>
         {book?.Title}<br />
-        <span className="author">by {fixName(book?.Author || '')}</span>
+        <span className="author">by <strong>{fixName(book?.Author || '')}</strong></span>
       </h2>
       {loading ? (<p><span className="loading-indicator"></span></p>) : (<CollapsibleText content={bookInfo?.description} defaultContent="Description unavailable"></CollapsibleText>)}
       <p>

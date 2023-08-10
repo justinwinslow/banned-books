@@ -6,10 +6,13 @@ Currently live at [https://bookban.info/](https://bookban.info/)
 
 ## TODO
 
+- [ ] Sort bans by date 
 - [ ] Filter on topics/keywords  
 - [ ] User controlled sorting?  
 - [ ] The current data source is static, this could maybe be dynamic or crowd-sourced  
 - [ ] Wire up gh actions to build and push changes to my server or investigate Vercel
+- [ ] Add news page?
+- [ ] Add books from my library page
 - [ ] ?  
 
 
