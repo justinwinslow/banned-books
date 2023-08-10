@@ -6,6 +6,7 @@ Currently live at [https://bookban.info/](https://bookban.info/)
 
 ## TODO
 
+- [ ] Hightlight matching string in search
 - [ ] Filter on topics/keywords  
 - [ ] User controlled sorting?  
 - [ ] The current data source is static, this could maybe be dynamic or crowd-sourced  
