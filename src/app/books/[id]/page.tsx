@@ -58,7 +58,7 @@ export default function Detail() {
   }, []);
 
   function sortBans(bans: any[]) {
-    return bans.sort((a:Ban, b:Ban): number => Date.parse(a?.['Date of Challenge/Removal'] || 0) - Date.parse(b?.['Date of Challenge/Removal'] || 0));
+    return bans.sort((a:Ban, b:Ban): number => Date.parse(a?.['Date of Challenge/Removal']) - Date.parse(b?.['Date of Challenge/Removal']));
   }
 
   return (
