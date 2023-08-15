@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import Fuse from 'fuse.js'
-import { debounce, kebabCase } from 'lodash';
+import { kebabCase } from 'lodash';
 import parseBooks from '../../util/parse-books';
 import getScrollParent from '../../util/get-scroll-parent';
 import books from '../../store/books';
