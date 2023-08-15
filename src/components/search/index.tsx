@@ -15,7 +15,11 @@ export default function Search({ route }: {route: string}) {
     router.push(`/${route}?search=${search}`); 
   }, 400);
 
-  useEffect(updateRoute, [search]);
+  useEffect(() => {
+    // Don't bother updating if search hasn't changed. This will
+    // most likely only happen on initial render. 
+    if (searchParams.get('search') != search) updateRoute();
+  }, [search]);
 
   return (
     <div className="search">

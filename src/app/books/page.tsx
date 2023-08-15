@@ -13,45 +13,32 @@ import books from '../../store/books';
 import fixName from '../../util/fix-name';
 import Search from '../../components/search';
 
-const setScroll = debounce((el: any) => {
-  console.log('setScroll');
-  const scrollPosition = parseInt((sessionStorage.getItem('scrollPosition') || ''), 10);
-  const scrollParent = getScrollParent(el);
-  if (scrollPosition) {
-    scrollParent?.scroll({top: scrollPosition});
-    sessionStorage.removeItem('scrollPosition');
-  }
-}, 300);
 
 export default function Books() {
   const searchParams = useSearchParams();
   const search = searchParams.get('search');
   const [filteredBooks, setFilteredBooks] = useState<any[]>([]);
   const rootElRef = useRef(null);
-  console.log('Books');
+
   useEffect(() => {
-    console.log('search', search);
-    setFilteredBooks([]);
-    if (!search) {
-      setFilteredBooks(books.sort((a, b) => a.Title.localeCompare(b.Title)));
-    } else {
-      const searcher = new Fuse(books.map(book => {
-        return {
-          author: fixName(book.Author),
-          title: book.Title,
-          book
-        }
-      }), {
-        keys: ['title', 'author'],
-        threshold: 0.3
-      });
-      setFilteredBooks(searcher.search(search).map(match => match.item.book));
-    }
+    if (!search) return setFilteredBooks(books.sort((a, b) => a.Title.localeCompare(b.Title)));
+    
+    const searcher = new Fuse(books.map(book => {
+      return {
+        author: fixName(book.Author),
+        title: book.Title,
+        book
+      }
+    }), {
+      keys: ['title', 'author'],
+      threshold: 0.3
+    });
+    setFilteredBooks(searcher.search(search).map(match => match.item.book));
   }, [search]);
 
   useEffect(() => {
     if (!filteredBooks.length || !sessionStorage.getItem('scrollPosition')) return;
-    setScroll(rootElRef.current);
+    setScroll();
   }, [filteredBooks])
 
   function persistScroll() {
@@ -59,12 +46,16 @@ export default function Books() {
     if (scrollParent) sessionStorage.setItem('scrollPosition', scrollParent?.scrollTop || 0);
   }
 
-  
-
-  /*
-    TODO
-    [ ] Save scroll position when navigating to detail views
-  */
+  function setScroll() {
+    const scrollPosition = parseInt((sessionStorage.getItem('scrollPosition') || ''), 10);
+    const scrollParent = getScrollParent(rootElRef?.current);
+    if (scrollPosition) {
+      scrollParent?.scroll({
+        top: scrollPosition,
+      });
+      sessionStorage.removeItem('scrollPosition');
+    }
+  }
 
   return (
     <section className="view books" ref={rootElRef}>
