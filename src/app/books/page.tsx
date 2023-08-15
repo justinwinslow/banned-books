@@ -2,36 +2,64 @@
 
 import './style.css';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import Fuse from 'fuse.js'
-import { kebabCase } from 'lodash';
+import { debounce, kebabCase } from 'lodash';
 import parseBooks from '../../util/parse-books';
+import getScrollParent from '../../util/get-scroll-parent';
 import books from '../../store/books';
 import fixName from '../../util/fix-name';
 import Search from '../../components/search';
+
+const setScroll = debounce((el: any) => {
+  console.log('setScroll');
+  const scrollPosition = parseInt((sessionStorage.getItem('scrollPosition') || ''), 10);
+  const scrollParent = getScrollParent(el);
+  if (scrollPosition) {
+    scrollParent?.scroll({top: scrollPosition});
+    sessionStorage.removeItem('scrollPosition');
+  }
+}, 300);
 
 export default function Books() {
   const searchParams = useSearchParams();
   const search = searchParams.get('search');
   const [filteredBooks, setFilteredBooks] = useState<any[]>([]);
+  const rootElRef = useRef(null);
+  console.log('Books');
+  useEffect(() => {
+    console.log('search', search);
+    setFilteredBooks([]);
+    if (!search) {
+      setFilteredBooks(books.sort((a, b) => a.Title.localeCompare(b.Title)));
+    } else {
+      const searcher = new Fuse(books.map(book => {
+        return {
+          author: fixName(book.Author),
+          title: book.Title,
+          book
+        }
+      }), {
+        keys: ['title', 'author'],
+        threshold: 0.3
+      });
+      setFilteredBooks(searcher.search(search).map(match => match.item.book));
+    }
+  }, [search]);
 
   useEffect(() => {
-    if (!search) return setFilteredBooks(books.sort((a, b) => a.Title.localeCompare(b.Title)));
-    const searcher = new Fuse(books.map(book => {
-      return {
-        author: fixName(book.Author),
-        title: book.Title,
-        book
-      }
-    }), {
-      keys: ['title', 'author'],
-      threshold: 0.3
-    });
-    setFilteredBooks(searcher.search(search).map(match => match.item.book));
-  }, [search])
+    if (!filteredBooks.length || !sessionStorage.getItem('scrollPosition')) return;
+    setScroll(rootElRef.current);
+  }, [filteredBooks])
 
+  function persistScroll() {
+    const scrollParent = getScrollParent(rootElRef.current);
+    if (scrollParent) sessionStorage.setItem('scrollPosition', scrollParent?.scrollTop || 0);
+  }
+
+  
 
   /*
     TODO
@@ -39,7 +67,7 @@ export default function Books() {
   */
 
   return (
-    <section className="view books">
+    <section className="view books" ref={rootElRef}>
       <div className="search-wrapper">
         <Search route="books" />
       </div>
@@ -47,7 +75,7 @@ export default function Books() {
         {!filteredBooks.length ? (<li className="no-results">No results found for: <strong>{search}</strong></li>) : (<></>)}
         {filteredBooks.map(b => (
           <li key={`${b.Title}-${b.Author}`}>
-            <Link href={`/books/${encodeURIComponent(kebabCase(`${b.Title}-${b.Author}`))}`}>
+            <Link href={`/books/${encodeURIComponent(kebabCase(`${b.Title}-${b.Author}`))}`} onClick={persistScroll}>
               <header>
                 {b.Title}
               </header>
