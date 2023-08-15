@@ -43,7 +43,14 @@ export default function Detail() {
 
   function back(event: React.MouseEvent) {
     event.preventDefault();
-    router.back();
+    if (window?.history?.length) {
+      // If we have history entries let's just go back
+      router.back();  
+    } else {
+      // Otherwise, the user likely navigated direct so let's
+      // send them to the books search
+      router.push('/books');
+    }
   }
 
   useEffect(() => {
