@@ -15,7 +15,7 @@ export default function Donate() {
           Any contribution you make can help me budget more time to this project. 
         </p>
         <p>
-          If you aren't in a place where you can provide financial support, you can still help! <a href="https://openlibrary.org/" target="_blank">Open Library</a> is
+          If you aren't in a place where you can provide financial support, you can still help! <a href="https://openlibrary.org/help/faq/about#contribute" target="_blank">Open Library</a> is
           the free resource I use to fill in information about each book &ndash; as you poke around the site you may find gaps in the data. 
           If you have time you can contribute corrections, descriptions, or cover art through them which helps more than just us. 
         </p>
@@ -23,7 +23,7 @@ export default function Donate() {
         <h2>Credits</h2>
         <ul>
           <li>Ban data provided by <a href="https://pen.org/banned-in-the-usa/#what" target="_blank">PEN America</a></li>
-          <li>Supplemental data provided by <a href="https://openlibrary.org/help/faq/about#contribute" target="_blank">Open Library</a></li>
+          <li>Supplemental data provided by <a href="https://openlibrary.org" target="_blank">Open Library</a></li>
         </ul>
       </div>
       <div className="donate">
