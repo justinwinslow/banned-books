@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import Fuse from 'fuse.js'
 import { kebabCase } from 'lodash';
-import parseBooks from '../../util/parse-books';
 import getScrollParent from '../../util/get-scroll-parent';
 import books from '../../store/books';
 import fixName from '../../util/fix-name';
