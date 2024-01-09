@@ -16,7 +16,6 @@
     "eslint": "latest",
     "eslint-config-next": "latest",
     "fuse.js": "latest",
-    "js-levenshtein": "latest",
     "lodash": "latest",
     "next": "latest",
     "normalize.css": "latest",
